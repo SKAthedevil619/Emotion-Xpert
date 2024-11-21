@@ -60,7 +60,12 @@ def video_analysis_route():
             video_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(video_file.filename))
             video_file.save(video_path)
             emotion_results = video_analysis.analyze_video_emotions(video_path)
-            return render_template('results.html', emotion_results=emotion_results, analysis_type='Video Analysis')
+            return render_template('results.html', 
+                                emotion_results=emotion_results['combined_emotions'],
+                                facial_emotions=emotion_results['facial_emotions'],
+                                audio_emotions=emotion_results['audio_emotions'],
+                                text_emotions=emotion_results['text_emotions'],
+                                analysis_type='Video Analysis')
         else:
             flash('Please upload a video file.')
             return redirect(request.url)
