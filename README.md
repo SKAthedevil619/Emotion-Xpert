@@ -39,7 +39,6 @@ The **Multimodal Emotion Recognition System** is an advanced AI-powered platform
   - `XGBoost`
   - `OpenCV`
   - `Librosa` for audio feature extraction
-  - `Matplotlib`, `Seaborn` for visualizations
 - **Datasets**: 
   - **RAVDESS** for audio and video analysis
 
